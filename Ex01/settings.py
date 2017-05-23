@@ -26,7 +26,7 @@ SECRET_KEY = '=lhgp4-*%l=j42*2%7&*_g0*g_c+bn=%+tus$1r=0sthccky!&'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'http://khaneulc.pythonanywhere.com/',
+    'khaneulc.pythonanywhere.com',
 ]
 
 
