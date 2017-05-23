@@ -25,7 +25,9 @@ SECRET_KEY = '=lhgp4-*%l=j42*2%7&*_g0*g_c+bn=%+tus$1r=0sthccky!&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'http://khaneulc.pythonanywhere.com/',
+]
 
 
 # Application definition
