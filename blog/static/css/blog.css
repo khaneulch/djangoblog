@@ -20,6 +20,7 @@ h1, h2, h3, h4 {
 
 .date {
     float: right;
+    width: 100%;
     color: #828282;
 }
 
