@@ -5,6 +5,7 @@
           <h1>{{ post.title }}</h1>
     </div>
     <div class="post bg_card">
+    {% if user.is_authenticated %}
         <div class="post_icon">
             <a class="btn btn-default btn-sm" href="{% url 'blog:post_edit' post.pk %}"><span class="glyphicon glyphicon-pencil"></span> </a>
             <form action="{% url 'blog:post_delete' post.pk %}" method="post" style="display: inline;">
@@ -15,6 +16,7 @@
                 </button>
             </form>
         </div>
+    {% endif %}
         <div>
             <img src="{{ post.upload_img.url }}" class="img-responsive hn_img">
         </div>

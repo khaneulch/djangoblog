@@ -10,8 +10,8 @@
         <title>Haneul's blog</title>
     </head>
     <body class="body_col">
-        <div class="page-header">
-            <nav class="navbar navbar-default">
+        <div>
+            <nav class="navbar navbar-default" style="margin-bottom: 0">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
@@ -24,21 +24,30 @@
 
                     <div class="collapse navbar-collapse" id="topNavBar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="{% block is_new %}{% endblock %}">
-                            <a href="{% url 'blog:post_new' %}">
-                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        {% if user.is_authenticated == False %}
+                            <li class="{% block is_login %}{% endblock %}">
+                                <a href="{% url 'login' %}">
+                                    <span class="glyphicon glyphicon-log-in" aria-hidden="true"> Login</span>
+                                </a>
+                            </li>
+                            <li class="{% block is_regist %}{% endblock %}">
+                                <a href="{% url 'blog:register' %}">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"> Registration</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if user.is_authenticated %}
+                            <li class="{% block is_new %}{% endblock %}">
+                                <a href="{% url 'blog:post_new' %}">
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"> NewPost</span>
+                                </a>
+                            </li>
+                            <li class="">
+                            <a href="{% url 'logout' %}">
+                                <span class="glyphicon glyphicon-log-in" aria-hidden="true"> Logout</span>
                             </a>
-                        </li>
-                        <li class="{% block is_regist %}{% endblock %}">
-                            <a href="{% url 'blog:register' %}">
-                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="#">
-                                <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
-                            </a>
-                        </li>
+                            </li>
+                        {% endif %}
                     </ul>
                     </div>
                 </div>
