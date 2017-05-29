@@ -2,18 +2,15 @@
 
 {% block content %}
     {% for post in posts %}
-        <div style="position:relative ;left: -5%;bottom:-25px; width: 70%; text-align: left">
-                <h1><a  href="{% url 'post_detail' pk=post.pk %}" style="color: black">{{ post.title }}</a></h1>
-            </div>
+        <div class="post_sub">
+                <h1><a  href="{% url 'blog:post_detail' pk=post.pk %}" style="color: black">{{ post.title }}</a></h1>
+        </div>
         <div class="post bg_card">
-            <div class="date">
-                <p style="float: right">{{ post.published_date }}</p>
-            </div>
-
-            <div>
+            <div><br>
                 <img src="{{ post.upload_img.url }}" class="img-responsive hn_img">
             </div>
             <p>{{ post.text|linebreaksbr }}</p>
+            <p class="date">{{ post.created_date }}</p>
         </div>
     {% endfor %}
 {% endblock content %}

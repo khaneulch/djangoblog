@@ -20,8 +20,7 @@ h1, h2, h3, h4 {
 }
 
 .date {
-    float: right;
-    width: 100%;
+    text-align: right;
     color: #828282;
 }
 
@@ -63,4 +62,24 @@ h1, h2, h3, h4 {
     box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
     background-color: white;
     padding: 1px 1px 1px 1px;
+}
+.post_sub{
+    position:relative ;
+    left: -5%;
+    bottom:-25px;
+    width: 70%;
+    text-align: left
+}
+.post_icon{
+    text-align: right;
+    padding: 5px 5px 0 0 ;
+}
+.home_title{
+    padding-top: 5px;
+    float: left;
+    font-size: 20pt;
+    vertical-align: middle;
+    color: black;
+    font-family: 'Ruda';
+    font-weight: bold;
 }

@@ -1,7 +1,8 @@
 {% extends 'blog/base.html' %}
+{% block is_regist %}active{% endblock %}
 
 {% block content%}
-    <h1>New Post</h1>
+    <h1>Create a new Account</h1>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {% for field in form %}

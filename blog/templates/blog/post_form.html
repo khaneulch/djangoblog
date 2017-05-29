@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+{% block is_new %}active{% endblock %}
+
+{% block content%}
+    <h1>New Post</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                 <div class="col-sm-offset-2 col-sm-10">
+                    <span class="text-danger small">{{ field.errors }}</span>
+                </div>
+                <label class="control-label col-sm-2">{{ field.label_tag }}</label>
+                <div class="col-sm-10">{{ field }}</div>
+            </div>
+        {% endfor %}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
