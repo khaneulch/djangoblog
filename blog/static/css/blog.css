@@ -15,7 +15,8 @@
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Ruda','나눔바른고딕';
+    font-weight: bold;
 }
 
 .date {
@@ -49,4 +50,17 @@ h1, h2, h3, h4 {
 .hn_img{
     margin: auto;
     max-width: 400px ;
+}
+.bg_col{
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+}
+.body_col{
+    background-color: #f7f7f7;
+}
+.bg_card{
+    box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+    background-color: white;
+    padding: 1px 1px 1px 1px;
 }

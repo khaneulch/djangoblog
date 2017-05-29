@@ -1,24 +1,37 @@
 {% load staticfiles %}
 <html>
     <head>
-        <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lobster|Inconsolata|Ruda&subset=latin,latin-ext" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
         <title>Haneul's blog</title>
     </head>
-    <body>
+    <body class="body_col">
         <div class="page-header">
-            <h1><a href="/">Haneul's Blog</a></h1>
+            <nav class="navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <h1><a class="navbar-brand" href="/">Haneul's Blog</a></h1>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{% url 'post_new' %}"><span class="glyphicon glyphicon-plus"></span></a> </li>
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span></a> </li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span></a> </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-        <div style="height: 200px; overflow: hidden">
-            <img src="media/main_bg.PNG" style="width: 100%">
+        <div style="height: 250px; overflow: hidden">
+            <img src="/media/main_bg.PNG" style="height: 100%; width: 100%">
         </div>
-        <div class="content container">
-            <div class="row" >
-                <div>
-                {% block content %}
-                {% endblock %}
+        <div class="bg_col">
+            <div class="content container">
+                <div class="row" >
+                    <div>
+                    {% block content %}
+                    {% endblock %}
+                    </div>
                 </div>
             </div>
         </div>
